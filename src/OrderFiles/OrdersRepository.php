@@ -42,7 +42,7 @@ class OrdersRepository
             "id" => $id
         ]);
         if (!$order)
-            return array(['Error' => 'Such order does not exist', Response::HTTP_BAD_REQUEST]);
+            return array();
         /* Find all entries from ProductOrderRelation table aka products from given order id */
         $order_rows = $this->em->getRepository(ProductOrderRelation::class)->findBy([
             "orderId" => $id

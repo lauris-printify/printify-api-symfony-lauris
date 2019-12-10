@@ -79,8 +79,10 @@ class OrdersController extends AbstractController
         /* If id is set, then display specific order. Otherwise, list all orders */
         $em = $this->getDoctrine()->getManager();
         $ordersRepository = new OrdersRepository($em);
-        if (isset($id)){
+        if (isset($id) && !empty($ordersRepository->orderArray($id, ''))){
             return new Response(json_encode($ordersRepository->orderArray($id, '')), Response::HTTP_OK);
+        } elseif (isset($id)){
+            return new Response(json_encode(['Error' => 'Such order does not exist']), Response::HTTP_BAD_REQUEST);
         } else {
             $type = '';
             if ($request->query->get('type')){
