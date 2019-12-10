@@ -48,14 +48,14 @@ composer install
 docker-compose up
 ```
 
-If you want to enable the option to limit requests from a specific country, log into phpmyadmin **http://localhost:8088** using:
+Log into phpmyadmin **http://localhost:8088** using:
 
 ```
 username: root
 password: rootroot
 ```
 
-Then, navigate to **printify_api database** and head to **Events** section. Finally, press **Event scheduler status** button.
+Then, navigate to **printify_api database** and head to **Events** section. Finally, press **Event scheduler status** button. This sets up properly request filter.
 
 ## DATABASE INSTALLATION
 
