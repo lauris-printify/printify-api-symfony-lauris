@@ -1,11 +1,43 @@
 # PRINTIFY PRODUCT API
 
 Recreated "printify-api-lauris" API with the PHP Symfony framework.
-Project runs on nginx server, php scripts are ran by php-fpm and data is stored in mysql.
+Project runs on nginx server, php scripts are ran by php-fpm and data is stored in mysql. Phpmyadmin is enabled too.
 
 This is an API which allows to add and view products.
 
 It is also possible to create order consisting of products and view specific order, orders and filter orders by a specific type of product within.
+
+## PROJECT FOLDER STRUCTURE
+
+The main source files of the API are stored in **src** directory.
+Below is a short overview of files I wrote excluding
+
+```
+src
+├── Controller [source files for endpoints]
+	├── OrdersController.php [handles API endpoints related to orders]
+	├── ProductsController.php [handles API endpoints related to products]
+├── Entity [Structure of rows (objects) within each table]
+	├── CountryCodes.php [describes fields of country code object tracking requests count]
+	├── Order.php [describes fields of order object]
+	├── Product.php [describes fields of product object]
+	├── ProductOrderRelation.php [describes fields of each object describing order and it's products]
+├── InvoiceFiles [Has a class for creating an object to generate HTML of an invoice for order]
+├── Migrations [Default folder for Doctrine. Migratins have not been used thus far.]
+├── OrderFiles [source files for each endpoint]
+	├── OrderDataValidator.php [Class to validate order data]
+	├── OrderErrorInfo.php [Class for turning error code into a message]
+	├── OrderRepository.php [functions for working with 'product_order_relation' database]
+├── ProductFiles [source files for each endpoint]
+	├── ProductDataStandardise.php [Class to standardise product data from posted JSON data to meet database standard]
+	├── ProductDataValidator.php [Class to validate product data]
+	├── ProductErrorInfo.php [Class for turning error code into a message]
+	├── ProductFetcher.php [class to fetch a product given characteristics]
+├── Repository [files for each Entity to access database]
+DataGetter.php [Class to get posted JSON data]
+Kernel.php [Core function of Symfony to set the project up. No changes made]
+KernelRequest.php [Custom made class acting as a middleware set request limit]
+```
 
 ## INSTALLATION
 
