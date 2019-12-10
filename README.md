@@ -31,8 +31,14 @@ This project uses mysql database and doctrine within the symfony project to edit
 After executing **docker-compose up** mysql is restored from **mysql-dump/printify_api.sql** file. Four tables - country_codes, order, product and product_order_relations - are automatically created empty.
 
 **country_codes** - keep track of requests from each country
+
+
 **product** - stores submitted products
+
+
 **order** - stores submitted orders
+
+
 **product_order_relation** - links an order with it's products
 
 
