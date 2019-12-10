@@ -72,11 +72,11 @@ class ProductsController extends AbstractController
                 "id" => $id
             ]);
             if (!$product)
-                return $this->json(['Error' => 'Such product does not exist', Response::HTTP_BAD_REQUEST]);
-            return $this->json([$product, Response::HTTP_OK]);
+                return $this->json(['Error' => 'Such product does not exist'], Response::HTTP_BAD_REQUEST);
+            return $this->json([$product], Response::HTTP_OK);
         } else {
             $products = $em->getRepository(Product::class)->findAll();
-            return $this->json([$products, Response::HTTP_OK]);
+            return $this->json([$products], Response::HTTP_OK);
         }
     }
 }
