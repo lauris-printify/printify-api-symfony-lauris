@@ -42,7 +42,7 @@ class ProductsController extends AbstractController
         /* Before validating value of the keys, standardise them */
         $dataStandardise->standardizeData($data);
         $keysValueStatus = $dataValidator->validateKeys($data);
-        if ($keysStatus != 0){
+        if ($keysValueStatus != 0){
             return $this->json(['error' => $errorInfo->errorInfo($keysValueStatus)], Response::HTTP_BAD_REQUEST);
         }
         /* Check if product with given type, color and size does not exist already */
