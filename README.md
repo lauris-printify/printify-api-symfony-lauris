@@ -1,6 +1,7 @@
 # PRINTIFY PRODUCT API
 
 Recreate "printify-api-lauris" with the PHP Symfony framework.
+Project runs on nginx server, php scripts are ran by php-fpm and data is stored in mysql.
 
 This is an API which allows to add and view products.
 
