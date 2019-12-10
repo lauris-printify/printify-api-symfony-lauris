@@ -27,12 +27,15 @@ Then, navigate to **printify_api database** and head to **Events** section. Fina
 ## DATABASE INSTALLATION
 
 This project uses mysql database and doctrine within the symfony project to edit it.
-After executin **docker-compose up** mysql is restored from **mysql-dump/printify_api.sql** file. Four tables - country_codes, order, product and product_order_relations - are automatically created empty.
+After executing **docker-compose up** mysql is restored from **mysql-dump/printify_api.sql** file. Four tables - country_codes, order, product and product_order_relations - are automatically created empty.
 
 **country_codes** - keep track of requests from each country
 **product** - stores submitted products
 **order** - stores submitted orders
 **product_order_relation** - links an order with it's products
+
+
+Connection to **mysql** docker container is defined in **config/services.yaml DATABASE_URL** field
 
 ## USAGE
 
@@ -126,7 +129,7 @@ http://localhost:8098/orders
 
 Viewing orders that contain item of a specific type of product
 
-http://localhost:8098/orders?type=t-shirt
+http://localhost:8098/orders?type={type}
 
 ## RESTRICTING CONNECTIONS
 
