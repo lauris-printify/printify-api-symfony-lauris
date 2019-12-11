@@ -75,6 +75,7 @@ class ProductDataValidator
         if (!is_string($type)){
             return (0);
         }
+        /* Idea is that if strcmp returns non zero value strings are not equal */
         if (strcmp("t-shirt", $type) && strcmp("socks", $type)
             && strcmp("hoodie", $type) && strcmp("beanie", $type)
             && strcmp("slippers", $type) && strcmp("jacket", $type)){
@@ -93,6 +94,7 @@ class ProductDataValidator
         if (!is_string($color)){
             return (0);
         }
+        /* Idea is that if strcmp returns non zero value strings are not equal */
         if (strcmp("black", $color) && strcmp("white", $color)
             && strcmp("blue", $color) && strcmp("red", $color)
             && strcmp("yellow", $color) && strcmp("purple", $color)){
@@ -112,6 +114,7 @@ class ProductDataValidator
         if (!is_string($size)){
             return (0);
         }
+        /* Idea is that if strcmp returns non zero value strings are not equal */
         if (strcmp("XS", $size) && strcmp("S", $size)
             && strcmp("M", $size) && strcmp("L", $size)
             && strcmp("XL", $size) && strcmp("XXL", $size)
