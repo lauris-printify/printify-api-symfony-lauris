@@ -51,7 +51,7 @@ class OrdersRepository
         if ($type != ''){
             $orderContainsTypeProduct = $this->orderContainsTypeProduct($order_rows, $type);
             if ($orderContainsTypeProduct == 0)
-                return array(['Message' => 'No order with given type of a product exists']);
+                return array();
         }
         /* Iterate through each object to get product ID and retrieve product with such information from 'product' table */
         $all_products = array();
