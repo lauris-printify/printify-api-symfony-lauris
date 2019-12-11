@@ -118,7 +118,7 @@ class ProductDataValidator
         if (strcmp("XS", $size) && strcmp("S", $size)
             && strcmp("M", $size) && strcmp("L", $size)
             && strcmp("XL", $size) && strcmp("XXL", $size)
-            && !intval($size) <= 0){
+            && intval($size) <= 0){
             return (0);
         }
         return (1);
