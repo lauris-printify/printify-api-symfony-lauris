@@ -10,7 +10,6 @@ It is also possible to create order consisting of products and view specific ord
 ## PROJECT FOLDER STRUCTURE
 
 The main source files of the API are stored in **src** directory.
-Below is a short overview of files I wrote excluding
 
 ```
 src
