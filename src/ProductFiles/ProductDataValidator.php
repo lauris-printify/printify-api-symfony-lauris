@@ -55,11 +55,10 @@ class ProductDataValidator
      */
 
     private function validatePrice($price): int{
-        if (!is_integer($price) && !is_float($price)){
+        if (!is_string($price)){
             return (0);
         }
-        $price_string = strval($price);
-        if (!preg_match('/^\d*\.?\d{0,2}$/', $price_string) || $price < 0){
+        if (!preg_match('/^\d*\.?\d{0,2}$/', $price) || intval($price <= 0)){
             return (0);
         }
         return (1);

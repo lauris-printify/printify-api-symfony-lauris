@@ -64,9 +64,9 @@ class OrdersRepository
             ]);
             $product['orderId'] = $id;
             $product['productId'] = $productId;
-            $product['productPrice'] = floatval($product_object->getPrice());
-            $product['productQuantity'] = $order_row->getQuantity();
-            $product['totalProductPrice'] = $product['productPrice'] * $product['productQuantity'];
+            $product['productPrice'] = $product_object->getPrice();
+            $product['productQuantity'] = (string)$order_row->getQuantity();
+            $product['totalProductPrice'] = (string)($product['productPrice'] * intval($product['productQuantity']));
             $product['productType'] = $product_object->getType();
             $product['productColor'] = $product_object->getColor();
             $product['productSize'] = $product_object->getSize();
@@ -76,11 +76,11 @@ class OrdersRepository
             $product['country'] = $order->getCountry();
             $product['postalcode'] = $order->getPostalcode();
             $product['createdAt'] = $order->getCreatedAt()->format('Y-m-d');
-            $order_price += $product['totalProductPrice'];
+            $order_price += intval($product['totalProductPrice']);
             array_push($all_products, $product);
         }
         foreach ($all_products as &$product){
-            $product['totalOrderPrice'] = $order_price;
+            $product['totalOrderPrice'] = (string)$order_price;
         }
         return $all_products;
     }
