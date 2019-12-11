@@ -100,13 +100,13 @@ Add a product
 http://localhost:8098/products
 ```
 {
-	"price" : 10.00,
+	"price" : "10.00",
 	"type" : "t-shirt",
 	"color" : "blue",
 	"size" : "S"
 }
 ```
-"price" field needs to be either a float or a whole number. It cannot be a string.
+"price" field needs to be a string
 
 
 "type" field can be "t-shirt", "socks", "hoodie", "beanie", "slippers", "jacket".
@@ -128,6 +128,7 @@ View one product by it's id
 
 http://localhost:8098/products/{id}
 
+All values returned except **id** of the product are strings.
 
 ### orders POST
 
@@ -168,6 +169,8 @@ http://localhost:8098/orders
 Viewing orders that contain item of a specific type of product
 
 http://localhost:8098/orders?type={type}
+
+All values returned except **orderId** and **productId** are strings.
 
 ## RESTRICTING CONNECTIONS
 
